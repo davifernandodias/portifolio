@@ -1,0 +1,34 @@
+@import '../../index.css';
+
+.header-content {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    width: 22rem; 
+    height: 3.3rem;
+    position: absolute; 
+    top: 2%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    border-radius: 35.53px; 
+    border: solid 1px var(--secundary-color-gray); 
+    padding: 10px 0; 
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.home-icon{
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem; 
+}
+.space-line {
+    border-left: 2.3px solid var(--secundary-color-gray); 
+    height: 40px; 
+  }
