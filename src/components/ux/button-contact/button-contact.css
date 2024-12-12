@@ -1,0 +1,14 @@
+@import '../../../index.css';
+
+.btn-contact{
+    background-color: var(--bg-color-black);
+    color: var(--primary-color-white);
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    text-decoration: none;  /* Remove o sublinhado */
+    pointer-events: none;   /* Desabilita a interatividade (opcional) */
+}
