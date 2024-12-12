@@ -1,2 +1,11 @@
 @import '../../index.css';
 
+/* container.css */
+.container-content {
+    display: flex;
+    justify-content: center; /* Centraliza o Header horizontalmente */
+    align-items: center; /* Centraliza o Header verticalmente */
+    border: solid 1px var(--secundary-color-gray);
+    margin: 0 25rem; /* Margens laterais */
+    height: 100vh; /* Certifique-se que o Container tenha altura suficiente para centralizar */
+}

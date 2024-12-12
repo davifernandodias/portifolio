@@ -1,11 +1,12 @@
-import Header from "../header-content/Header";
-import TextProfile from '../ux/titleText/TextProfile';
+import './container.css'
+import Header from "../header/Header";
+import CheckBoxLanguage from '../ux/checkbox-language/Check-box-language';
 
 function Container() {
     return (
         <div className="container-content">
             <Header />
-            <TextProfile />
+            <CheckBoxLanguage/>
         </div>
     );
 }
