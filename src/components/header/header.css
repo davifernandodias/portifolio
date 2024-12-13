@@ -1,4 +1,18 @@
-@import '../../index.css';
+/* Definindo a animação de slide com expansão */
+@keyframes slideDownExpand {
+    0% {
+        transform: translate(-50%, -50px) scale(0.5); /* Começa um pouco acima e pequeno */
+        opacity: 0; /* Começa invisível */
+    }
+    50% {
+        transform: translate(-50%, 2%) scale(1.05); /* No meio da animação, o tamanho aumenta um pouco */
+        opacity: 0.7; /* Fica levemente visível no meio do caminho */
+    }
+    100% {
+        transform: translate(-50%, 4%) scale(1); /* Chega na posição final e no tamanho original */
+        opacity: 1; /* Fica totalmente visível */
+    }
+}
 
 .header-content {
     display: flex;
@@ -15,6 +29,9 @@
     padding: 10px 0;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
     gap: 1.5rem;
+
+    /* Aplica a animação de slideDownExpand */
+    animation: slideDownExpand 2s ease-out forwards; /* Manipule o tempo aqui */
 }
 
 .header-item {
@@ -24,11 +41,12 @@
     align-items: center;
     cursor: pointer;
 }
+
 .home-icon {
     width: 1.8rem;
     height: 1.7rem;
     color: var(--color-dark);
-    transition: background-color 0.3s ease, padding 0.3s ease, border-radius 0.3s ease; /* Adiciona transição para uma mudança suave */
+    transition: background-color 0.3s ease, padding 0.3s ease, border-radius 0.3s ease; /* Adiciona transição suave */
 }
 
 .home-icon:hover {
@@ -65,4 +83,3 @@
     border-left: 2.3px solid var(--secundary-color-gray);
     height: 25px;
 }
-
