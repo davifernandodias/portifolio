@@ -1,0 +1,49 @@
+@import '../../index.css';
+
+/* Estilo padrão */
+.information-profile {
+    font-family: var(--text-font-Archivo), sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto; /* Ajusta a altura automaticamente conforme o conteúdo */
+    overflow: visible;
+    word-wrap: break-word;
+    padding: 5rem 2rem 0 0;
+    left: 0;
+    width: 100%; /* Ajusta a largura para ocupar 100% do contêiner */
+    max-width: 510px; /* Limita a largura máxima a 510px */
+    min-width: 320px; /* Define um tamanho mínimo para que o layout não fique muito pequeno em celulares */
+}
+
+/* Responsividade para telas de tablets */
+@media (max-width: 768px) {
+    .information-profile {
+        width: 90%; /* Reduz a largura para 90% da tela em dispositivos menores */
+        padding: 3rem 1rem 0 1rem; /* Ajusta o padding para telas menores */
+    }
+}
+
+/* Responsividade para telas de smartphones */
+@media (max-width: 480px) {
+    .information-profile {
+        width: 100%; /* Faz o elemento ocupar toda a largura da tela em telas muito pequenas */
+        padding: 2rem 1rem 0 1rem;
+    }
+
+    .information-profile h1 {
+        font-size: 1.5rem; /* Ajusta o tamanho do título para telas pequenas */
+    }
+
+    .information-profile p {
+        font-size: 1rem; /* Ajusta o tamanho do parágrafo */
+    }
+}
+
+/* Garantindo que o layout se ajuste bem em telas grandes */
+@media (min-width: 1024px) {
+    .information-profile {
+        padding: 6rem 2rem 0 0; /* Maior padding para telas grandes */
+    }
+}

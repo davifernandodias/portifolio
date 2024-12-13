@@ -1,6 +1,6 @@
 @import '../../../index.css';
 
-.btn-contact{
+.btn-contact {
     background-color: var(--bg-color-black);
     color: var(--primary-color-white);
     padding: 12px 25px;
@@ -9,6 +9,11 @@
     border: none;
     cursor: pointer;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
-    text-decoration: none;  /* Remove o sublinhado */
-    pointer-events: none;   /* Desabilita a interatividade (opcional) */
+    text-decoration: none;  
+    transition: padding 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+.btn-contact:hover {
+    padding: 12px 26.5px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2); /* Aumenta o sombreamento ao passar o mouse */
 }

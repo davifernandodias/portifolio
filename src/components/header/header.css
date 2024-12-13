@@ -1,3 +1,6 @@
+@import '../../index.css';
+
+
 /* Definindo a animação de slide com expansão */
 @keyframes slideDownExpand {
     0% {
