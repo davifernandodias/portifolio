@@ -3,8 +3,8 @@
 .header-content {
     display: flex;
     justify-content: center;
-    align-items: center; /* Alinha verticalmente os itens no centro */
-    width: 26rem;
+    align-items: center; 
+    width: 26.2rem;
     height: 3rem;
     position: absolute;
     top: 4%;
@@ -22,11 +22,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
+}
+.home-icon {
+    width: 1.8rem;
+    height: 1.7rem;
+    color: var(--color-dark);
+    transition: background-color 0.3s ease, padding 0.3s ease, border-radius 0.3s ease; /* Adiciona transição para uma mudança suave */
 }
 
-.home-icon {
-    width: 2rem;
-    height: 2rem;
+.home-icon:hover {
+    background-color: var(--color-light);
+    border-radius: 10px;
+    padding: 14px;
 }
 
 .header-item .tooltip {
@@ -40,18 +48,21 @@
     border-radius: 10px;
     font-size: 0.875rem;
     white-space: nowrap;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, bottom 0.3s ease;
     transform: translateY(10px);
+    backdrop-filter: blur(20px); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); 
 }
 
 .header-item:hover .tooltip {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    bottom: -2.5rem; 
 }
 
 .space-line {
     border-left: 2.3px solid var(--secundary-color-gray);
     height: 25px;
-
 }
+
