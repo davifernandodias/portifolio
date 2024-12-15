@@ -2,12 +2,67 @@
 
 /* container.css */
 .container-content {
-    display: flex;
-    justify-content: center; /* Centraliza o Header horizontalmente */
-    align-items: center; /* Centraliza o Header verticalmente */
-    border: solid 1px var(--secundary-color-gray);
-    margin: 0 25rem; /* Margens laterais */
-    padding: 0; /* Removendo qualquer padding no container */
+    border-left: solid 1px var(--secundary-color-gray); /* Borda esquerda */
+    border-right: solid 1px var(--secundary-color-gray); /* Borda direita */
+    border-bottom: solid 1px var(--secundary-color-gray); /* Borda inferior */
+    border-top: none; /* Sem borda no topo */
+    margin: 0 35rem; /* Margens laterais */
+    padding: 0; /* Removendo padding */
 }
+
+@media (max-width: 2000px) {
+    .container-content {
+        align-items: center; /* Centraliza o Header verticalmente */
+        margin: 0 20rem; /* Margens laterais */
+        padding: 0; /* Removendo qualquer padding no container */
+    }
+}
+
+@media (max-width: 1500px) {
+    .container-content {
+        align-items: center; /* Centraliza o Header verticalmente */
+        margin: 0 15rem; /* Margens laterais */
+        padding: 0; /* Removendo qualquer padding no container */
+    }
+}
+
+@media (max-width: 1200px) {
+    .container-content {
+        align-items: center; /* Centraliza o Header verticalmente */
+        margin: 0 10rem; /* Margens laterais */
+        padding: 0; /* Removendo qualquer padding no container */
+    }
+}
+
+@media (max-width: 1000px) {
+    .container-content {
+        align-items: center; /* Centraliza o Header verticalmente */
+        margin: 0 4rem; /* Margens laterais */
+        padding: 0; /* Removendo qualquer padding no container */
+    }
+}
+@media (max-width: 850px) {
+    .container-content {
+        align-items: center; /* Centraliza o Header verticalmente */
+        margin: 0 3rem; /* Margens laterais */
+        padding: 0; /* Removendo qualquer padding no container */
+    }
+}
+@media (max-width: 500px) {
+    .container-content {
+        align-items: center; /* Centraliza o Header verticalmente */
+        margin: 0 1rem; /* Margens laterais */
+        padding: 0; /* Removendo qualquer padding no container */
+    }
+}
+@media (max-width: 350px) {
+    .container-content {
+        align-items: center; /* Centraliza o Header verticalmente */
+        margin: 0 0.5rem; /* Margens laterais */
+        padding: 0; /* Removendo qualquer padding no container */
+    }
+}
+
+
 
 
