@@ -1,0 +1,95 @@
+@import '../../../index.css';
+
+/* Estilo base para o header */
+.header-mobile {
+  display: none; /* O header começa invisível */
+  justify-content: space-between; /* Distribui os itens nas extremidades */
+  width: 100%;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
+  height: 80px;
+  border-bottom: 1px solid var(--secundary-color-gray);
+  position: fixed; /* Fixo no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Fica acima de outros elementos */
+  backdrop-filter: blur(12px); /* Efeito de desfoque melhorado */
+  transition: all 0.3s ease; /* Transição suave para os efeitos */
+}
+
+/* Contêiner dos itens dentro do header */
+.container-header-items {
+  display: flex;
+  justify-content: space-between; /* Espaça os itens */
+  align-items: center;
+  padding: 0 15px;
+  width: 100%; /* Garante que ocupe toda a largura disponível */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-icon-header-mobile, .three-icon-header-mobile {
+  width: 40px;
+  height: 40px;
+  color: var(--bg-color-black);
+  cursor: pointer; /* Cursor de clique para os ícones */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animações de clique */
+}
+
+/* Efeito de clique nos ícones */
+.home-icon-header-mobile:hover, .three-icon-header-mobile:hover {
+  transform: scale(1.1); /* Aumenta o tamanho do ícone */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+}
+
+/* Efeito de clique (click) nos ícones */
+.home-icon-header-mobile:active, .three-icon-header-mobile:active {
+  transform: scale(0.95); /* Diminui o tamanho do ícone quando clicado */
+  box-shadow: none; /* Remove a sombra quando o ícone é clicado */
+}
+
+/* Estilizando as linhas do três ícones */
+.three-icon-header-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px; /* Largura das linhas */
+  height: 8px; /* Espaço entre as linhas */
+  margin-right: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.line {
+  height: 1px; /* Espessura das linhas */
+  width: 100%;
+  background-color: var(--bg-color-black);
+  transition: all 0.3s ease; /* Transição suave para animações */
+}
+
+.line1 {
+  transform-origin: top left;
+}
+
+.line2 {
+  transform-origin: bottom left;
+}
+
+/* Quando o menu é aberto (X formado) */
+.three-icon-header-mobile.open .line1 {
+  transform: rotate(45deg) translateY(-9px);
+  border-radius: 50px; 
+}
+
+.three-icon-header-mobile.open .line2 {
+  transform: rotate(-45deg) translateY(9px); /* A linha inferior forma o X */
+  border-radius: 50px; 
+
+}
+
+/* Media Query para telas menores que 800px */
+@media (max-width: 800px) {
+  .header-mobile {
+    display: flex; /* Torna o header visível em telas menores que 800px */
+  }
+}
