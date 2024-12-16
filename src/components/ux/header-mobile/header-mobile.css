@@ -1,29 +1,25 @@
 @import '../../../index.css';
 
-/* Estilo base para o header */
 .header-mobile {
-  display: none; /* O header começa invisível */
-  justify-content: space-between; /* Distribui os itens nas extremidades */
+  display: none;
+  justify-content: space-between;
   width: 100%;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
+  background-color: rgba(255, 255, 255, 0.9); 
   height: 80px;
   border-bottom: 1px solid var(--secundary-color-gray);
-  position: fixed; /* Fixo no topo */
+  position: fixed; 
   top: 0;
   left: 0;
-  z-index: 1000; /* Fica acima de outros elementos */
-  backdrop-filter: blur(12px); /* Efeito de desfoque melhorado */
-  transition: all 0.3s ease; /* Transição suave para os efeitos */
+  transition: all 0.3s ease;
 }
 
-/* Contêiner dos itens dentro do header */
 .container-header-items {
   display: flex;
-  justify-content: space-between; /* Espaça os itens */
+  justify-content: space-between; 
   align-items: center;
   padding: 0 15px;
-  width: 100%; /* Garante que ocupe toda a largura disponível */
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -32,36 +28,32 @@
   width: 40px;
   height: 40px;
   color: var(--bg-color-black);
-  cursor: pointer; /* Cursor de clique para os ícones */
+  cursor: pointer; 
   transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animações de clique */
 }
 
-/* Efeito de clique nos ícones */
 .home-icon-header-mobile:hover, .three-icon-header-mobile:hover {
-  transform: scale(1.1); /* Aumenta o tamanho do ícone */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+  transform: scale(1.1); 
 }
 
-/* Efeito de clique (click) nos ícones */
 .home-icon-header-mobile:active, .three-icon-header-mobile:active {
-  transform: scale(0.95); /* Diminui o tamanho do ícone quando clicado */
-  box-shadow: none; /* Remove a sombra quando o ícone é clicado */
+  transform: scale(0.95); 
 }
 
-/* Estilizando as linhas do três ícones */
 .three-icon-header-mobile {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 25px; /* Largura das linhas */
   height: 8px; /* Espaço entre as linhas */
-  margin-right: 30px;
+  padding: 15px;
+  border-radius: 100%;
   position: relative;
   cursor: pointer;
 }
 
 .line {
-  height: 1px; /* Espessura das linhas */
+  height: 1px;
   width: 100%;
   background-color: var(--bg-color-black);
   transition: all 0.3s ease; /* Transição suave para animações */
@@ -75,21 +67,139 @@
   transform-origin: bottom left;
 }
 
-/* Quando o menu é aberto (X formado) */
 .three-icon-header-mobile.open .line1 {
-  transform: rotate(45deg) translateY(-9px);
-  border-radius: 50px; 
+  display: flex;
+  position: relative;
+  left: 1px;
+  top: 1px;
+
+  transform: rotate(45deg) translateY(-7px);
 }
 
 .three-icon-header-mobile.open .line2 {
-  transform: rotate(-45deg) translateY(9px); /* A linha inferior forma o X */
-  border-radius: 50px; 
+  display: flex;
+  position: relative;
+  left: -1px;
+  transform: rotate(-45deg) translateY(9px);
+}
+/* Animação para o efeito de foco no texto */
+@-webkit-keyframes focus-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(300px);
+            transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+            transform: translateZ(12px);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(300px);
+            transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+            transform: translateZ(12px);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
 
+/* Classe para aplicar a animação */
+.focus-in-contract-bck {
+  -webkit-animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* Menu com desfoque variável */
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--text-font-Archivo), sans-serif;
+  align-items: flex-start;
+  justify-items: center;
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7); 
+  padding: 10px 0;
+  max-height: 0; 
+  opacity: 0; /* Inicialmente invisível */
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+
+  /* Aplicando um desfoque variável (menos no topo, mais no fundo) */
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(5px);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9)); 
+}
+
+.menu-link span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(12px);
+}
+
+.menu-links.open .menu-link span {
+  opacity: 1;
+  filter: blur(0);
+  animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; 
+}
+
+.menu-links.open {
+  max-height: 300px;
+  opacity: 1;
+  display: flex;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  text-decoration: none;
+  color: var(--bg-color-black);
+  font-size: 18px;
+  width: 100%;
+  position: relative;
+}
+
+.menu-link:hover {
+  background-color: var(--primary-color-light);
+  color: var(--primary-color);
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-icon {
+  display: flex;
+  position: relative;
+  left: -35px;
+  font-size: 2.5rem;
+  padding: 0 0.2rem 0 0;
+  margin-left: 20px;
+  transition: transform 0.3s ease;
+}
+
+.menu-link:hover .menu-icon {
+  transform: translateX(5px);
 }
 
 /* Media Query para telas menores que 800px */
 @media (max-width: 800px) {
   .header-mobile {
-    display: flex; /* Torna o header visível em telas menores que 800px */
+    display: flex; 
   }
 }
