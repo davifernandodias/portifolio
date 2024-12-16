@@ -1,0 +1,46 @@
+@import '../../../index.css';
+
+.btn-available {
+
+    background-color: var(--bg-color-green-button);
+    font-family: var(--text-font-Archivo), sans-serif;
+    font-weight: 100;
+    border-radius: 50px;
+    border: none;
+    color: var(--text-color-green-button);
+    width: 240px;
+    height: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    padding-left: 20px; 
+    padding-right: 30px; 
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    text-decoration: none;  
+}
+
+.point-alter-green-light {
+    width: 10px;  
+    height: 10px; 
+    background-color: var(--text-color-green-button);
+    border-radius: 50%;
+    box-shadow: 0 0 8px 3px rgba(0, 255, 0, 0.7);
+    animation: expand 1.5s infinite ease-in-out; 
+    margin: 0px 35px 0px -15px; 
+    
+}
+
+/* Animação para expandir o brilho ao redor da bolinha */
+@keyframes expand {
+    0% {
+        box-shadow: 0 0 8px 3px rgba(0, 255, 0, 0.7); /* Brilho inicial */
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.6); /* Expansão do brilho */
+    }
+    100% {
+        box-shadow: 0 0 8px 3px rgba(0, 255, 0, 0.7); /* Contração do brilho */
+    }
+}
