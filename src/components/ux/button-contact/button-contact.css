@@ -1,6 +1,7 @@
 @import '../../../index.css';
 
 .btn-contact {
+    
     background-color: var(--bg-color-black);
     color: var(--primary-color-white);
     padding: 12px 25px;
