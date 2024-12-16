@@ -4,6 +4,9 @@
 :root{
   --primary-color-white: #FFFFFF; 
   --secundary-color-gray: #DBDBDB;
+  --secundary-color-gray_black: #999999;
+  --text-color-green-button: #25940F;
+  --bg-color-green-button: #E1F9DC;
   --color-light: #eeeeee;
   --color-test: red;
   --color-dark: rgb(95, 95, 95);
